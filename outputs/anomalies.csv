@@ -1,0 +1,4 @@
+trip_id,zone,duration_min,distance_km,battery_start,anomaly_long_trip,anomaly_short_trip,anomaly_low_battery
+3,Centre-Ville,70.0,7.2,22,True,False,False
+4,Plateau,3.0,0.3,10,False,False,True
+7,Centre-Ville,50.0,5.9,14,False,False,True
