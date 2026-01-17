@@ -35,3 +35,10 @@ Le fichier `data/trottinettes.csv` contient des trajets avec :
 Installer les dépendances :
 ```bash
 pip install -r requirements.txt
+python etl.py
+
+##  Outputs
+Après exécution, le script génère :
+- `outputs/kpis.json`
+- `outputs/anomalies.csv`
+
