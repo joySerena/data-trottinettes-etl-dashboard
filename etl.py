@@ -67,6 +67,5 @@ def main():
 
     print("\nFichiers générés : outputs/kpis.json et outputs/anomalies.csv")
 
-
 if __name__ == "__main__":
     main()
