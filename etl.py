@@ -1,4 +1,7 @@
 import pandas as pd
+import os
+import json
+
 
 def load_data(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
@@ -51,6 +54,19 @@ def main():
     cols = ["trip_id", "zone", "duration_min", "distance_km", "battery_start",
             "anomaly_long_trip", "anomaly_short_trip", "anomaly_low_battery"]
     print(anomalies[cols].head(10))
+
+    # ====== EXPORT DES RESULTATS ======
+    os.makedirs("outputs", exist_ok=True)
+
+    # Sauvegarder les KPI en JSON
+    with open("outputs/kpis.json", "w", encoding="utf-8") as f:
+        json.dump(kpis, f, ensure_ascii=False, indent=2)
+
+    # Sauvegarder les anomalies en CSV
+    anomalies[cols].to_csv("outputs/anomalies.csv", index=False)
+
+    print("\nFichiers générés : outputs/kpis.json et outputs/anomalies.csv")
+
 
 if __name__ == "__main__":
     main()
